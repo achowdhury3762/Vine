@@ -6,6 +6,8 @@ package nyc.c4q.ashiquechowdhury.midterm_practical.model;
 public class Repost {
     User user;
     String profileBackground;
+
+
     public User getUser() {
         return user;
     }
