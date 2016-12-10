@@ -48,6 +48,11 @@ public class VineFragment extends Fragment {
                 VinePOJO myVine = response.body();
                 Log.d("Number of Items", String.valueOf(myVine.getData().getCount()));
                 List<RecordList> recordList = myVine.getData().getVineRecordList();
+                for (int i = 0; i < recordList.size(); i++) {
+                    if(recordList.get(i).getRepost() == null){
+                        recordList.remove(i);
+                    }
+                }
                 mRecyclerView.setAdapter(new VineAdapter(recordList));
             }
 
