@@ -9,6 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
+
+import nyc.c4q.ashiquechowdhury.midterm_practical.model.RecordList;
 import nyc.c4q.ashiquechowdhury.midterm_practical.model.VineAPI;
 import nyc.c4q.ashiquechowdhury.midterm_practical.model.VinePOJO;
 import retrofit2.Call;
@@ -44,7 +47,8 @@ public class VineFragment extends Fragment {
             public void onResponse(Call<VinePOJO> call, Response<VinePOJO> response) {
                 VinePOJO myVine = response.body();
                 Log.d("Number of Items", String.valueOf(myVine.getData().getCount()));
-                mRecyclerView.setAdapter(new VineAdapter());
+                List<RecordList> recordList = myVine.getData().getVineRecordList();
+                mRecyclerView.setAdapter(new VineAdapter(recordList));
             }
 
             @Override
