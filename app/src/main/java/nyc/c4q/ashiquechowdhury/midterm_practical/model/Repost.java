@@ -5,13 +5,12 @@ package nyc.c4q.ashiquechowdhury.midterm_practical.model;
  */
 public class Repost {
     String username;
-    Vanity vanityUrls;
-
+    String profileBackground;
     public String getUsername() {
         return username;
     }
 
-    public Vanity getVanityUrls() {
-        return vanityUrls;
+    public String getProfileBackground() {
+        return profileBackground;
     }
 }

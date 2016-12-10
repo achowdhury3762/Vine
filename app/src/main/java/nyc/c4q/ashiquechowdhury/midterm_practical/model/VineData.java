@@ -7,8 +7,13 @@ import java.util.List;
  */
 public class VineData {
     public List<RecordList> getVineRecordList() {
-        return vineRecordList;
+        return records;
     }
 
-    List<RecordList> vineRecordList;
+    public int getCount() {
+        return count;
+    }
+
+    List<RecordList> records;
+    int count;
 }
